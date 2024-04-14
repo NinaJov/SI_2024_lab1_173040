@@ -1,0 +1,238 @@
+4. На вашиот компјутер, направете директориум (локален репозиториум) којшто ќе
+биде со исто име како и вашиот оддалечен репозиториум. Влезете во
+директориумот и иницијализирајте го Git во директориумот
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040
+$ git init
+Initialized empty Git repository in C:/Users/Nina/Desktop/SI_2024_lab1_173040/.git/
+
+5. Поврзете го локалниот репозиториум со оддалечениот репозиториум.
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git remote add origin https://github.com/NinaJov/SI_2024_lab1_173040.git
+
+6. Додадете README.md датотека во која ќе се потпишете (име, презиме, број на
+индекс). Направете commit со порака Initial commit.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git commit -m "Initial commit"
+
+7. Преземете ги следните три фајлови (линк1, линк2, линк3) и додадете ги во
+локалниот репозиториум. Направете commit со порака Add starter code.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git commit -m "Add starter code"
+
+8. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin master
+
+9. Отворете две гранки (сите да се разгрануваат од master гранката): bug1 и bug2.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git branch bug1
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git branch bug2
+
+10. Префрлете се на гранката bug1.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git checkout bug1
+
+11. Поравете ја грешката во метоодот filterOddLengthStrings. Направете commit со
+пораката Fix wrong condition in filterOddLengthStrings.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git commit -m "Fix wrong condition in filterOddLengthString"
+
+12. Префрлете се на гранката bug2.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git checkout bug2
+
+13. Поправете ја грешката во методот makeBigStringFrom. Направете commit со
+пораката Fix wrong condition in makeBigStringFrom.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git commit -m "Fix wrong condition in makeBigStringFrom"
+
+14. Вратете се на гранката bug1.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git checkout bug1
+
+15. Во класата SILab1Main, после for циклусот, во линија 16, додадете повик до
+статичкиот метод filterOddLengthStrings
+System.out.println(SILab1_1.filterOddLengthStrings(list));
+Направете commit со порака Call method filterOddLengthStrings in main class.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git commit -m "Call method filterOddLengthStrings in main class"
+
+16. Вратете се на гранката bug2.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug1)
+$ git checkout bug2
+
+17. Во класата SILab1Main, после for циклусот, во линија 16, додадете повик до
+статичкиот метод makeBigStringFrom
+System.out.println(SILab1_2.makeBigStringFrom(list)); Направете
+commit со порака Call method makeBigStringFrom in main class.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git commit -m "Call method makeBigStringFrom in main class"
+
+18. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git push -u origin master
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git push -u origin bug1
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git push -u origin bug2
+
+19. Префрлете се на гранката master.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git checkout master
+
+20. Спојте ја гранката bug1 кон гранката master.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git merge bug1
+Updating 8425e95..73e6a59
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_1.java   | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+Bidejkji od momentot koga se kreirala grankata bug1 do momentot na spojuvanje na taa granka kon master, na master nema nikakvi dopolnitelni promeni(commit-i), promenite od bug1 kje se spojat po fast-forward startegijata.
+
+21. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin master
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin bug1
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin bug2
+
+22. Префрлете се на гранката bug2.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git checkout bug2
+
+23. Направете rebase спрема гранката master.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply 76c78f1... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 76c78f1... Call method makeBigStringFrom in main class
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2|REBASE 2/2)
+$ git add .
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2|REBASE 2/2)
+$ git rebase --continue
+[detached HEAD b341fca] Call method makeBigStringFrom in main class
+ 1 file changed, 1 insertion(+)
+Successfully rebased and updated refs/heads/bug2.
+
+Bidejkji na master prethodno gi spoivme vekje promenite od bug1 grankata, a vo SILab1Main i bug1 i bug2 napravija promena na istata linija kod, kje se javi konflikt za vreme na rebase.
+Od koga kje se sredi konfliktot(kje se ostavat dvete promeni i od bug1 i od bug2 vo kodot), se pravi prvo git add i git rebase --continue za da zavrsi procesot na rebase koj bese prethodno prekinat poradi konfliktot.
+Vo slednite logovi od bug2 moze da se vidi deka prvo gi ima commite od master(koi gi socinuvaat i od bug1 zatoa sto bese napraveno merge od bug1) pa potoa sledat dvata od bug2 grankata.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git log
+commit b341fca5c4fc6b38f4c884f93001267c0404c026 (HEAD -> bug2)
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:45:56 2024 +0200
+
+    Call method makeBigStringFrom in main class
+
+commit da1597cf56dd272e4a5d083f7b14caac2358916d
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:42:08 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 73e6a5998a6eec5a228cf04cfffa42889e70630f (origin/master, origin/bug1, master, bug1)
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:44:11 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit 4269513603df56dfa2efdb499956838caaee1ab5
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:39:49 2024 +0200
+
+    Fix wrong condition in filterOddLengthString
+
+commit 8425e95783bdc8fe57a73110b221ed26e87f353a
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:32:27 2024 +0200
+
+    Add starter code
+
+commit b62583e410f17e3f105773d4d96d1e10a162e1ee
+Author: Nina Jovanovik <ninajovanovik@yahoo.com>
+Date:   Sun Apr 14 16:28:06 2024 +0200
+
+    Initial commit
+
+24. Префрлете се на гранката master.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (bug2)
+$ git checkout master
+
+25. Спојте ја гранката bug2 кон гранката master.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git merge bug2
+Updating 73e6a59..b341fca
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_2.java   | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+Poradi prethodniot rebase se dobi situacija deka na master nema nikakvi promeni od momentot koga se kreirala bug2. Poradi toa sto nema nikakvi promeni se koristi fast-forward strategija za iveduvanje na merge.
+
+26. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin master
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u origin bug1
+
+Nina@DESKTOP-HO2P0NT MINGW64 ~/Desktop/SI_2024_lab1_173040 (master)
+$ git push -u --force origin bug2
